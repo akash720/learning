@@ -5,15 +5,19 @@ The area of machine learning which focuses on deep artificial neural networks wh
 There are studies which say that both shallow and deep networks can fit at any function, but as deep networks have several hidden layers often of different types so they are able to build or extract better features than shallow models with fewer parameters (Shallow ones have very less hidden layers).
 
 ### 3. What is a cost function?
-A cost function is a measure of the accuracy of the neural network with respect to given training sample and expected output. It is a single value, nonvector as it gives the performance of the neural network as a whole.
-__Mean Squared Error function:-__
-MSE=1/n( n∑i=1 (Yi–Y^i)^2
+A cost function is a measure of the accuracy of the neural network with respect to given training sample and expected output. It is a single value, nonvector as it gives the performance of the neural network as a whole.  
+
+__Mean Squared Error function:-__  
+
+MSE=1/n( n∑i=1 (Yi–Y^i)^2  
+
 Where Y^ and desired value Y is what we want to minimize..
 
 ### 4. What is a gradient descent?
 Gradient descent is basically an optimization algorithm, which is used to learn the value of parameters that minimizes the cost function. It is an iterative algorithm which moves in the direction of steepest descent as defined by the negative of the gradient. We compute the gradient descent of the cost function for given parameter and update the parameter by the below formula:
 
 Θ := Θ – α * ∂J(Θ)/∂Θ
+
 Where Θ – is the parameter vector, α – learning rate, J(Θ) – is a cost function.
 
 ### 5. What is a backpropagation?
@@ -27,11 +31,13 @@ Backpropagation is training algorithm used for multilayer neural network. In thi
 
 ### 6. Explain the following three variants of gradient descent: batch, stochastic and mini-batch?
 __Stochastic Gradient Descent:__ Here we use only single training example. It means the batch size is 1.
+
 __Batch Gradient Descent:__ Here we calculate the gradient for the whole dataset and perform the update at each iteration. It means the batch size is equal to number of samples(examples) .
+
 __Mini-batch Gradient Descent:__ Here mini-batch of samples is used. It means that the batch size is between 1 and number of samples.
 
 ### 7. What are the benefits of mini-batch gradient descent?
-Below are the benefits of mini-batch gradient descent
+Below are the benefits of mini-batch gradient descent:
 * This is more efficient compared to stochastic gradient descent.
 * Mini-batches allows help to approximate the gradient of entire training set which helps us to avoid local minima.
 
@@ -59,8 +65,11 @@ As a result of setting weights in the network to zero, all the neurons at each l
 
 ### 14. What Are Hyperparameters, Provide Some Examples?
 Hyperparameters as opposed to model parameters can’t be learn from the data, they are set before training phase.
+
 __Learning rate:__ It determines how fast we want to update the weights during optimization. If learning rate is too small, gradient descent can be slow to find the minimum and if it’s too large gradient descent may not converge(it can overshoot the minima).
+
 __Number of epochs:__ Epoch is defined as one forward pass and one backward pass of all training data. It means that one epoch is completed when we go over our data (fully) once.
+
 __Batch size:__ The number of training examples in one forward/backward pass.
 
 ### 15. What Is A Dropout?
@@ -68,16 +77,19 @@ Dropout is a regularization technique for reducing overfitting in neural network
 
 ### 16. What is the difference between Bias and Variance?
 __Bias:__ Bias is how far are the predicted values from the actual values. If the average predicted values are far off from the actual values then the bias is high. High bias causes algorithm to miss relevant relationship between input and output variable. When a model has a high bias then it implies that the model is too simple and does not capture the complexity of data thus underfitting the data.
+
 __Variance:__ Variance occurs when the model performs good on the trained dataset but does not do well on a dataset that it is not trained on, like a test dataset or validation dataset. 
 Variance tells us how scattered are the predicted value from the actual value. High variance causes overfitting that implies that the algorithm models random noise present in the training data.
 When a model has a high variance then the model becomes very flexible and tune itself to the data points of the training set. When a high variance model encounters a different data point that it has not learnt then it cannot make right prediction.
 
 ### 17. How is KNN different from K-means clustering?
 __K-means__ is a clustering algorithm that tries to partition a set of points into K sets (clusters) such that the points in each cluster tend to be near each other. It is unsupervised because the points have no external classification.
+
 __K-nearest neighbors__ is a classification (or regression) algorithm that in order to determine the classification of a point, combines the classification of the K nearest points. It is supervised because you are trying to classify a point based on the known classification of other points.
 
 ###  18. Explain what is precision and Recall?
 __Recall:__ It is known as a true positive rate. The number of positives that your model has claimed compared to the actual defined number of positives available throughout the data.
+
 __Precision:__ It is also known as a positive predicted value. This is more based on the prediction. It is a measure of a number of accurate positives that the model claims when compared to the number of positives it actually claims.
 
 ### 19. What is the difference between Type 1 and Type 2 errors?

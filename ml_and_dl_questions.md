@@ -9,7 +9,7 @@ A cost function is a measure of the accuracy of the neural network with respect 
 
 __Mean Squared Error function:-__  
 
-MSE=1/n( n∑i=1 (Yi–Y^i)^2  
+MSE=1/n( n∑i=1 (Yi–Y^i)^2 )  
 
 Where Y^ and desired value Y is what we want to minimize..
 

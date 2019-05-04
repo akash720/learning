@@ -88,3 +88,13 @@ Let's understand Steps 3 & 4 in detail.
 _For more on YOLO refer these:_
 1. https://www.learnopencv.com/deep-learning-based-object-detection-using-yolov3-with-opencv-python-c/
 2. https://www.analyticsvidhya.com/blog/2018/12/practical-guide-object-detection-yolo-framewor-python/
+
+## The Different Types of Image Segmentation
+We can broadly divide image segmentation techniques into two types. Consider the below images:
+
+![types_of_image_segmentation](images/2.png)
+
+* In image 1, every pixel belongs to a particular class (either background or person). Also, all the pixels belonging to a particular class are represented by the same color (background as black and person as pink). This is an example of semantic segmentation
+* Image 2 has also assigned a particular class to each pixel of the image. However, different objects of the same class have different colors (Person 1 as red, Person 2 as green, background as black, etc.). This is an example of instance segmentation
+
+![diff_task_in_cv](images/1.png)

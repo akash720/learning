@@ -85,6 +85,8 @@ Let's understand Steps 3 & 4 in detail.
 	* 85 = 5 + 80, where 5 is (pc, bx, by, bh, bw) and 80 is the number of classes we want to detect
 * Finally, we do the IoU and Non-Max Suppression to avoid selecting overlapping boxes
 
+![gan_architecture](images/10.png)
+
 _For more on YOLO refer these:_
 1. https://www.learnopencv.com/deep-learning-based-object-detection-using-yolov3-with-opencv-python-c/
 2. https://www.analyticsvidhya.com/blog/2018/12/practical-guide-object-detection-yolo-framewor-python/

@@ -57,8 +57,10 @@ Conditional GANs are interesting for two reasons:
 Z is fixed on rows and Y on columns. Z encodes the style of the number and Y encodes the number itself.
 
 __Recent research__
+
 There are lots of interesting articles on the subject. Among them, I highlight these two:
 * __Learning what and where to draw__: in this, the authors propose a mechanism to tell the GAN (via text descriptions) not only how you would like the content of the image to be, but also the position of the element via bounding boxes/landmarks. Have a look at the results:
+
 ![cGAN3](images/7.jpg)
 
 * __StackGAN__: this is similar to the previous one. In this case, they focus on improving the quality of the image by using 2 GANs at the same time: Stage-I and Stage-II. Stage-I is used to get a low-resolution image containing the “general” idea of the image. Stage-II refines Stage-I’s images with more details and higher resolution. This paper has, to my knowledge, one of the bests models when it comes to generating high-quality images. See it by yourself:
@@ -95,7 +97,7 @@ GANs have always had problems with convergence and, as a consequence, you don’
 
 For example, see these two uninformative loss functions plots of a DCGAN perfectly able to generate MNIST samples:
 
-[WGANs_on_MNIST](images/8.jpg)
+![WGANs_on_MNIST](images/8.jpg)
 
 Do you know when to stop training just by looking at this figure? Me neither.
 
@@ -103,7 +105,7 @@ This interpretability issue is one of the problems that Wasserstein GANs aims to
 
 So, WassGAN has a loss function that correlates with image quality and enables convergence. It is also more stable, meaning that it is not as dependent on the architecture.
 
-[WGANs_on_MNIST](images/9.jpg)
+![WGANs_on_MNIST](images/9.jpg)
 
 This is the plot of the WassGAN loss function. The lower the loss, the higher the image quality. Neat!
 

@@ -36,6 +36,21 @@ In our function V(D, G) the first term is entropy that the data from real distri
 
 On the other hand, the task of generator is exactly opposite, i.e. it tries to minimize the function V so that the differentiation between real and fake data is bare minimum. 
 
+## Problems with GANs
+* __Problem with Counting__: GANs fail to differentiate how many of a particular object should occur at a location. As we can see below, it gives more number of eyes in the head than naturally present.
+
+![prob_with_gan_1](images/13.png)
+
+* __Problems with Perspective__: GANs fail to adapt to 3D objects. It doesn’t understand perspective, i.e.difference between frontview and backview. As we can see below, it gives flat (2D) representation of 3D objects.
+
+![prob_with_gan_2](images/14.png)
+
+* __Problems with Global Structures__: Same as the problem with perspective, GANs do not understand a holistic structure. For example, in the bottom left image, it gives a generated image of a quadruple cow, i.e. a cow standing on its hind legs and simultaneously on all four legs. That is definitely not possible in real life!
+ 
+![prob_with_gan_3](images/15.png)
+
+A substantial research is being done to take care of these problems. Newer types of models are proposed which give more accurate results than previous techniques, such as DCGAN, WassersteinGAN etc.
+
 ## Types of GANs
 ### Deep Convolutional GANs (DCGANs)
 The authors of the DCGAN focused on improving the architecture of the original vanilla GAN. Among other things, they found out that:

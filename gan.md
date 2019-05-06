@@ -6,10 +6,35 @@ Example: For MNIST, the discriminator network is a standard convolutional networ
 
 ![gan_for_mnist](images/3.png)
 
-## How GANs work
+## How do GANs work(1st explanation)
 At first, the generator generates images. It does this by sampling a vector noise Z from a simple distribution (e.g. normal) and then upsampling this vector up to an image. In the first iterations, these images will look very noisy. Then, the discriminator is given fake and real images and learns to distinguish them. The generator later receives the “feedback” of the discriminator through a backpropagation step, becoming better at generating images. At the end, we want that the distribution of fake images is as close as possible to the distribution of real images. Or, in simple words, we want fake images to look as plausible as possible.
 
 ![working_of_gan](images/4.jpg)
+
+## How do GANs work(2nd explanation)
+We got a high level overview of GANs. Now, we will go on to understand their nitty-gritty of these things.
+As we saw, there are two main components of a GAN – Generator Neural Network and Discriminator Neural Network.
+
+![working_of_gan](images/11.jpg)
+
+The Generator Network takes an random input and tries to generate a sample of data. In the above image, we can see that generator G(z) takes a input z from p(z), where  z is a sample from probability distribution p(z). It then generates a data which is then fed into a discriminator network D(x). The task of Discriminator Network is to take input either from the real data or from the generator and try to predict whether the input is real or generated. It takes an input x from p<sub>data</sub>(x) where p<sub>data</sub>(x) is our real data distribution. D(x) then solves a binary classification problem using sigmoid function giving output in the range 0 to 1.
+
+Let us define the notations we will be using to formalize our GAN,
+
+p<sub>data</sub>(x) -> the distribution of real data  
+X -> sample from p<sub>data</sub>(x)  
+p(z) -> distribution of generator  
+Z -> sample from p(z)  
+G(z) -> Generator Network  
+D(x) -> Discriminator Network  
+
+Now the training of GAN is done (as we saw above) as a fight between generator and discriminator. This can be represented mathematically as
+
+![gan_equation](images/12.png)
+
+In our function V(D, G) the first term is entropy that the data from real distribution (p<sub>data</sub>(x)) passes through the discriminator (aka best case scenario). The discriminator tries to maximize this to 1. The second term is entropy that the data from random input (p(z)) passes through the generator, which then generates a fake sample which is then passed through the discriminator to identify the fakeness (aka worst case scenario). In this term, discriminator tries to maximize it to 0 (i.e. the log probability that the data from generated is fake is equal to 0). So overall, the discriminator is trying to maximize our function V.
+
+On the other hand, the task of generator is exactly opposite, i.e. it tries to minimize the function V so that the differentiation between real and fake data is bare minimum. 
 
 ## Types of GANs
 ### Deep Convolutional GANs (DCGANs)
@@ -118,3 +143,4 @@ __You might want to use Wasserstein GANs if__
 
 #### For more refer these:
 1. http://guimperarnau.com/blog/2017/03/Fantastic-GANs-and-where-to-find-them
+2. https://www.analyticsvidhya.com/blog/2017/06/introductory-generative-adversarial-networks-gans/

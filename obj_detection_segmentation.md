@@ -66,6 +66,7 @@ https://www.analyticsvidhya.com/blog/2018/10/a-step-by-step-introduction-to-the-
 5. The resulting boxes contains the objects.
 
 __Notes about point__
+
 __1.__ :	
 * The input image to a neural network needs to be in a certain format called a blob. 
 * After a frame is read from the input image or video stream, it is passed through the __blobFromImage__ function to convert it to an input blob for the neural network. 

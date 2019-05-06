@@ -59,21 +59,24 @@ https://www.analyticsvidhya.com/blog/2018/10/a-step-by-step-introduction-to-the-
 
 ## Working of YOLO:
 
-1. First, it divides the image into a grid of cells. The size of these cells vary depending on the size of the input. Let's understand this in detail.
-
-	* The input image to a neural network needs to be in a certain format called a blob. 
-	* After a frame is read from the input image or video stream, it is passed through the __blobFromImage__ function to convert it to an input blob for the neural network. 
-	* In this process, it scales the image pixel values to a target range of 0 to 1 using a scale factor of 1/255. It also resizes the image to the given size of, say (416, 416), without cropping.
-
+1. First, it divides the image into a grid of 13 x 13 cells. The size of these cells vary depending on the size of the input. *
 2. Each cell is then responsible for predicting a number of boxes in the image. These boxes are predicted by passing the blob generated as input to the network and a forward pass is run to get a list of predicted bounding boxes as the network’s output. 
 3. For each bounding box, the network also predicts the confidence that the bounding box actually encloses an object, and the probability of the enclosed object being a particular class.
-4. Most of these bounding boxes are eliminated because their confidence is low or because they are enclosing the same object as another bounding box with very high confidence score. This technique is called non-maximum suppression. 
-Let's understand Steps 3 & 4 in detail.
-	* The network outputs bounding boxes each of which is represented by a vector of number of classes + 5 elements.
-	* The first 4 elements represent the center_x, center_y, width and height. The fifth element represents the confidence that the bounding box encloses an object.
-	* The rest of the elements are the confidence associated with each class (i.e. object type). The box is assigned to the class corresponding to the highest score for the box.
-	* The highest score for a box is also called its confidence. If the confidence of a box is less than the given threshold, the bounding box is dropped and not considered for further processing.
-	* The boxes with their confidence equal to or greater than the confidence threshold are then subjected to Non Maximum Suppression. This would reduce the number of overlapping boxes.
+4. Most of these bounding boxes are eliminated because their confidence is low or because they are enclosing the same object as another bounding box with very high confidence score. This technique is called non-maximum suppression. **
+5. The resulting boxes contains the objects.
+
+__Notes about point__
+__1.__ :	
+* The input image to a neural network needs to be in a certain format called a blob. 
+* After a frame is read from the input image or video stream, it is passed through the __blobFromImage__ function to convert it to an input blob for the neural network. 
+* In this process, it scales the image pixel values to a target range of 0 to 1 using a scale factor of 1/255. It also resizes the image to the given size of, say (416, 416), without cropping. 
+
+__3 & 4__:
+* The network outputs bounding boxes each of which is represented by a vector of number of classes + 5 elements.
+* The first 4 elements represent the center_x, center_y, width and height. The fifth element represents the confidence that the bounding box encloses an object.
+* The rest of the elements are the confidence associated with each class (i.e. object type). The box is assigned to the class corresponding to the highest score for the box.
+* The highest score for a box is also called its confidence. If the confidence of a box is less than the given threshold, the bounding box is dropped and not considered for further processing.
+* The boxes with their confidence equal to or greater than the confidence threshold are then subjected to Non Maximum Suppression. This would reduce the number of overlapping boxes.
 
 #### Below are the exact dimensions and steps that the YOLO algorithm follows:
 
@@ -83,7 +86,10 @@ Let's understand Steps 3 & 4 in detail.
 	* Here, each cell of a 19 X 19 grid returns 425 numbers
 	* 425 = 5 * 85, where 5 is the number of anchor boxes per grid
 	* 85 = 5 + 80, where 5 is (pc, bx, by, bh, bw) and 80 is the number of classes we want to detect
-* Finally, we do the IoU and Non-Max Suppression to avoid selecting overlapping boxes
+* You then select only few boxes based on:
+	* Score-thresholding: throw away boxes that have detected a class with a score less than the threshold
+	* Non-max suppression: Compute the Intersection over Union and avoid selecting overlapping boxes
+* This gives you YOLO's final output.
 
 ![gan_architecture](images/10.png)
 

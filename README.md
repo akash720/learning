@@ -7,3 +7,5 @@ detection and segmentation
 * Generative Adversarial Networks.ipynb, gan.md: learning about GANs(if 
 notebook is not not opening, try cloning the repo and run locally in 
 jupyter nb)
+* bugs_errors_fixes: Contains some bugs and errors I encountered and 
+their fixes

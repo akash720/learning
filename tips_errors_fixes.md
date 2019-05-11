@@ -1,5 +1,4 @@
-
-# [ERROR] 1. MinGW issue with conda python
+# 1. MinGW issue with conda python
 If you are facing the issue "cannot find -lvcruntime140" while building from setup.py file then follow the steps below:
 
 1. First install the libpython and toolchain by using the following command:
@@ -33,34 +32,3 @@ What commenting these lines does is to tell cygwin compiler to not look for visu
 <MinGW installation path>\bin
 <MinGW installation path>\msys\1.0\bin
 ```
-
-# [TIPS] 2. Multi-level import python
-Use when importing python modules from one(or more) directory above current working directory.
-
-Suppose you have the following folder structure:
-```
-        Directory_1/
-                - file1.py
-                - Directory_2/
-                            - file2.py
-                            - file3.py
-                - Directory_3/
-                            - file4.py
-
-```
-* Now you want to import a function from `file1.py` and `file2.py` each in `file4.py`, then from `file4.py` you would do:
-
-```
-import sys
-sys.path.append('../')
-from Directory_2.file2 import any_function_1
-```
-The second line tells the compiler to append one directory above to system path.
-
-* For `file1.py` you would use:
-```
-import sys
-sys.path.append('../../')
-from Directory_1.file1 import any_function_2
-```   
-The second line here tells the compiler to append two directory above to system path.

@@ -64,3 +64,7 @@ sys.path.append('../../')
 from Directory_1.file1 import any_function_2
 ```   
 The second line here tells the compiler to append two directory above to system path.
+
+# [TIPS] 3. Last-layer activation and loss function combinations
+
+![activations_and_loss](images/16.png)

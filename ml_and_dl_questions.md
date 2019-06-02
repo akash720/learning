@@ -153,6 +153,14 @@ Some regularization techniques:
 * Dropout is a technique applied to neural networks that randomly sets some of the neurons’ outputs to zero during training. This forces the network to learn better representations of the data by preventing complex interactions between the neurons: Each neuron needs to learn useful features.
 * Early stopping will stop training when the validation score stops improving, even when the training score may be improving. This prevents overfitting on the training dataset.
 
+The standard way to avoid overfitting is called __L2 regularization__. It consists of appropriately modifying your cost function, from:
+
+![unregularized](images/17.gif)
+
+To:
+
+![regularized](images/18.gif)
+
 ### 28. What is the curse of dimensionality? Can you list some ways to deal with it?
 The curse of dimensionality is when the training data has a high feature count, but the dataset does not have enough samples for a model to learn correctly from so many features.
 

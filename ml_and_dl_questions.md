@@ -72,6 +72,14 @@ __Number of epochs:__ Epoch is defined as one forward pass and one backward pass
 
 __Batch size:__ The number of training examples in one forward/backward pass.
 
+Let’s make this concrete with a small example.
+
+Assume you have a dataset with 200 samples (rows of data) and you choose a batch size of 5 and 1,000 epochs.
+
+This means that the dataset will be divided into 40 batches, each with five samples. The model weights will be updated after each batch of five samples. This also means that one epoch will involve 40 batches or 40 updates to the model.
+
+With 1,000 epochs, the model will be exposed to or pass through the whole dataset 1,000 times. That is a total of 40,000 batches during the entire training process.
+
 ### 15. What Is A Dropout?
 Dropout is a regularization technique for reducing overfitting in neural networks. At each training step we randomly drop out (set to zero) a set of nodes.
 

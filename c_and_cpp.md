@@ -10,13 +10,22 @@ __getche()__ also reads only a single character but it returns as well as prints
 8. We cannot perform arithmetic operations between two pointers.
 9. When we increment a pointer, it's value is changed by the length of data type that it points to. This length is known as __scale factor__.
 10. A __void pointer__ can be used to point to variables of any data type.
-11. In C, dynamic memory is allocated from the heap using some standard library functions. The two key dynamic memory functions are malloc() and free().  
-The __malloc()__ function takes a single parameter, which is the size of the requested memory area in bytes. It returns a pointer to the allocated memory. If the allocation fails, it returns NULL.  
+11. In C, dynamic memory is allocated from the heap using some standard library functions. The two key dynamic memory functions are __malloc()__ and __free()__.  These functions are present in __stdlib.h__ header file.  
+C++ supports these functions and also has two operators **new** and **delete** that perform the task of allocating and freeing the memory in a better and easier way.
+12. The __malloc()__ function takes a single parameter, which is the size of the requested memory area in bytes. It returns a pointer to the allocated memory. If the allocation fails, it returns NULL.  
 Example:  
 	```
 	int *pointer;  
 	pointer = malloc(10 * sizeof(int));  
 	```
-	The __free()__ function takes the pointer returned by malloc() and de-allocates the memory. No indication of success or failure is returned.  
-	Example:  
-	`free(pointer);`
+13. The __free()__ function takes the pointer returned by malloc() and de-allocates the memory. No indication of success or failure is returned.  
+Example:  
+`free(pointer);`
+14. There's one more function which is used to allocate memory dynamically.  
+The __calloc()__ function does basically the same job as malloc(), except that it takes two parameters – the number of array elements and the size of each element – instead of a single parameter (which is the product of these two values). The allocated memory is also initialized to zeros.
+Example:
+`pointer = calloc(num_of_elements, sizeof_element); `
+15. To allocate memory of any data type using __new__ operator, the syntax is:
+`pointer_variable = new data-type;`
+16. To deallocate memory pointed by pointer_variable using __delete__ operator, the syntax is:  
+`delete pointer_variable;`

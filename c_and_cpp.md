@@ -40,7 +40,57 @@ Example:
 `pointer = calloc(num_of_elements, sizeof_element); `
 
 15. To allocate memory of any data type using __new__ operator, the syntax is:
-`pointer_variable = new data-type;`
+`pointer_variable = new data-type;`  
+For arrays:
+`pointer_variable_2 = new data-type[];`
 
 16. To deallocate memory pointed by pointer_variable using __delete__ operator, the syntax is:  
-`delete pointer_variable;`
+`delete pointer_variable;`  
+For arrays:
+`delete []pointer_variable_2;`
+
+17. The operator __<<__ is called __insertion__ or __put to__ operator. Whereas, the operator __>>__ is called __extraction__ or __get from__ operator.
+
+18. When we declare a member of a class as __static__ it means no matter how many objects of the class are created, there is only one copy of the static member and this one copy is shareable among all the objects.  
+All static data is initialized to __zero__ when the first object is created, if no other initialization is present.
+
+19. If a function is __static__ then there's __no need to create object__ for calling that function. Also a __static function__ can only access __static data member__.
+
+20. __this__ refers to the __invoking object__. Only member functions have a __this__ pointer.
+
+21. __friend__ functions should be declared inside the class definition, but they are __not__ member functions of that class.  
+
+22. __friend__ function has the right to access __all members__(public, private, protected) of the class but since it is not member function of that class, it __cannot access the members directly__. Instead it uses another object of that class to access members.
+
+23. __friend__ function takes object of class as argument. Also, __friend__ functions are called normally without  any object.
+
+24. Example of __friend__ function:  
+	```
+	class A
+	{
+	    int num;
+	    public:
+	    void get()
+	    {
+	        cout << "enter the number:";
+	        cin >> num;
+	    }
+	    friend void showTable(A obj);
+	};
+	void showTable(A obj)
+	{
+	    int i;
+	    for(i=1;i<11;i++)
+	        cout << obj.num*i << endl;		//accessing 'num' through obj
+	}
+	int main()
+	{
+	    A t1;
+	    t1.get();
+	    showTable(t1);
+	}
+	``` 
+
+25. We can also define a __friend__ class of another class.
+
+26. All variables declared inside the function will take up memory from the __stack__. Whereas when we dynamically allocate memory, it is allocated on __heap__.

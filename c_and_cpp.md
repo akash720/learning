@@ -12,7 +12,7 @@
 
 7. __getchar()__ keeps on reading the input until enter key is pressed.  
 __getch()__ reads only a single character and returns it immediately.  
-__getche()__ also reads only a single character but it returns as well as prints the character which is read.
+__getche()__ also reads only a single character but it returns as well as prints the character which was read.
 
 8. We cannot perform arithmetic operations between two pointers.
 
@@ -41,15 +41,15 @@ Example:
 
 15. To allocate memory of any data type using __new__ operator, the syntax is:
 `pointer_variable = new data-type;`  
-For arrays:
+__For arrays:__
 `pointer_variable_2 = new data-type[];`
 
 16. To deallocate memory pointed by pointer_variable using __delete__ operator, the syntax is:  
 `delete pointer_variable;`  
-For arrays:
+__For arrays:__
 `delete []pointer_variable_2;`
 
-17. The operator __<<__ is called __insertion__ or __put to__ operator. Whereas, the operator __>>__ is called __extraction__ or __get from__ operator.
+17. The operator `<<` is called __insertion__ or __put to__ operator. Whereas, the operator `>>` is called __extraction__ or __get from__ operator.
 
 18. When we declare a member of a class as __static__ it means no matter how many objects of the class are created, there is only one copy of the static member and this one copy is shareable among all the objects.  
 All static data is initialized to __zero__ when the first object is created, if no other initialization is present.
@@ -58,7 +58,7 @@ All static data is initialized to __zero__ when the first object is created, if 
 
 20. __this__ refers to the __invoking object__. Only member functions have a __this__ pointer.
 
-21. __friend__ functions should be declared inside the class definition, but they are __not__ member functions of that class.  
+21. __friend__ functions should be declared inside the class definition, but they will __not__ be member functions of that class.  
 
 22. __friend__ function has the right to access __all members__(public, private, protected) of the class but since it is not member function of that class, it __cannot access the members directly__. Instead it uses another object of that class to access members.
 

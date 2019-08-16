@@ -14,7 +14,7 @@
 __getch()__ reads only a single character and returns it immediately.  
 __getche()__ also reads only a single character but it returns as well as prints the character which was read.
 
-8. We cannot perform arithmetic operations between two pointers.
+8. We can only perform subtraction between two pointers which are pointing to elements of the same array.
 
 9. When we increment a pointer, it's value is changed by the length of data type that it points to. This length is known as __scale factor__.
 

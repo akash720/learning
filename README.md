@@ -12,3 +12,4 @@ their fixes
 * c_and_cpp: Contains learning related to c/c++
 * my_pandas_cheatsheet: Cheatsheet for pandas dataset
 * my_git_cheatsheet: Cheatsheet for git commands
+* python_tricks: Tips & tricks in python

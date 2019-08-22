@@ -66,5 +66,27 @@ from Directory_1.file1 import any_function_2
 The second line here tells the compiler to append two directory above to system path.
 
 # [TIPS] 3. Last-layer activation and loss function combinations
-
 ![activations_and_loss](images/16.png)
+
+# [TIPS] 4. Convert a bootable pen drive into a normal one
+Do the following simple steps:
+
+FORMAT PENDRIVE(very first step)
+
+1. Go to command prompt
+
+2. Type “ diskpart” ,it will open another window and takes some time to load.
+
+3. In new cmd window,type “list disk”(space between list and disk is must).It shows the list of disks.
+
+4. type “select disk (Disk number of pendrive)”.for example, select disk 2(‘2’ represents disk number of bootable pendrive).
+
+5. type “clean”
+
+6. type “create partition primary”
+
+7. type “exit” to close the window.
+
+8. format pendrive again.
+
+You will get your full capacity of pendrive.

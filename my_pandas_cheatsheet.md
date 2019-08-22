@@ -9,8 +9,8 @@
 * `train_df.columns.get_loc("pear")` tells the index of column by name "pear"
 
 * ```
-	corr = train_df.corr()["target_variable_name"]
-	corr[np.argsort(corr, axis=0)[::-1]]
+  corr = train_df.corr()["target_variable_name"]
+  corr[np.argsort(corr, axis=0)[::-1]]
   ``` 
 	tells the correlation between features and the target variable, 1.00 being the highest. ('-1' for arranging in decreasing order)
 

@@ -13,3 +13,9 @@ their fixes
 * my_pandas_cheatsheet: Cheatsheet for pandas dataset
 * my_git_cheatsheet: Cheatsheet for git commands
 * python_tricks: Tips & tricks in python
+* html_js: Contains learning related to Javascript and HTML
+* java: Contains learning related to Java
+* rdbms: Contains learning related to RDBMS
+* software_engineering: Contains learning related to Software Engineering
+* unix: Contains learning related to Unix
+* xml: Contains learning related to XML

@@ -1,4 +1,4 @@
-1. `log2(n & -n)+1` returns the position of the rightmost set bit from right.
+1. `log2(n&-n)+1` returns the position of the rightmost set bit from right.
 
 2. `int(log2(n)+1)` returns the number of bits in the binary representation of the given number. 
 
@@ -19,3 +19,18 @@
 7. XOR of two bits `a^b` is `0` if bits are same and `1` if bits are different.
 
 8. Must read page on inner functions (which are also used as decorators) : https://realpython.com/inner-functions-what-are-they-good-for/
+
+9. For fast input try the following:
+	a. 
+    ```
+	import sys
+	n = int(sys.stdin.readline())
+	arr = sys.stdin.readline().split()
+	```
+	b. 
+    ```
+	import os,io
+	input = io.BytesIO(os.read(0,os.fstat(0).st_size)).readline
+	n = int(sys.stdin.readline())
+	arr = sys.stdin.readline().split()
+	```

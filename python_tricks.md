@@ -31,6 +31,6 @@
     ```
 	import os,io
 	input = io.BytesIO(os.read(0,os.fstat(0).st_size)).readline
-	n = int(sys.stdin.readline())
-	arr = sys.stdin.readline().split()
+	n = int(input())
+	arr = input().split()
 	```

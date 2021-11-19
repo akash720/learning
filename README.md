@@ -19,3 +19,4 @@ their fixes
 * software_engineering: Contains learning related to Software Engineering
 * unix: Contains learning related to Unix
 * xml: Contains learning related to XML
+* computer_networks: Contains learning related to Computer Networks

@@ -7,11 +7,11 @@ There are studies which say that both shallow and deep networks can fit at any f
 ### 3. What is a cost function?
 A cost function is a measure of the accuracy of the neural network with respect to given training sample and expected output. It is a single value, nonvector as it gives the performance of the neural network as a whole.  
 
-__Mean Squared Error function:-__  
+#### Mean Squared Error function:  
 
-MSE=1/n( n∑i=1 (Yi–Y^i)^2 )  
+MSE= [<sup>n</sup>∑<sub>i=1</sub> (Y<sub>i</sub>–Y<sup>^</sup><sub>i</sub>)<sup>2</sup>] / n 
 
-Where Y^ and desired value Y is what we want to minimize..
+Where Y^ (output) and Y (desired value) is what we want to minimize.
 
 ### 4. What is a gradient descent?
 Gradient descent is basically an optimization algorithm, which is used to learn the value of parameters that minimizes the cost function. It is an iterative algorithm which moves in the direction of steepest descent as defined by the negative of the gradient. We compute the gradient descent of the cost function for given parameter and update the parameter by the below formula:
@@ -70,7 +70,9 @@ __Learning rate:__ It determines how fast we want to update the weights during o
 
 __Number of epochs:__ Epoch is defined as one forward pass and one backward pass of all training data. It means that one epoch is completed when we go over our data (fully) once.
 
-__Batch size:__ The number of training examples in one forward/backward pass.
+__Batch size:__ The number of training examples in one batch.
+
+__Number of batch__: Calculated as: (Total number of training examples / batch size). Note that model weights are updated after each batch completes.
 
 Let’s make this concrete with a small example.
 
@@ -95,7 +97,7 @@ __K-means__ is a clustering algorithm that tries to partition a set of points in
 
 __K-nearest neighbors__ is a classification (or regression) algorithm that in order to determine the classification of a point, combines the classification of the K nearest points. It is supervised because you are trying to classify a point based on the known classification of other points.
 
-###  18. Explain what is precision and Recall?
+###  18. Explain what is Precision and Recall?
 __Recall:__ It is known as a true positive rate. The number of positives that your model has claimed compared to the actual defined number of positives available throughout the data.
 
 __Precision:__ It is also known as a positive predicted value. This is more based on the prediction. It is a measure of a number of accurate positives that the model claims when compared to the number of positives it actually claims.
@@ -113,10 +115,9 @@ In Machine Learning concepts, they are three main methods or processes to avoid 
 * Must and should use cross validation techniques
 * It is mandatory to use regularization techniques, for example, LASSO.
 
-### 22. How to handle or missing data in a dataset?
-An individual can easily find missing or corrupted data in a data set either by dropping the rows or columns. On contrary, they can decide to replace the data with another value.
-In Pandas they are two ways to identify the missing data, these two methods are very useful.
-isnull() and dropna().
+### 22. How to handle missing or corrupted data in a dataset?
+An individual can easily handle missing or corrupted data in a data set either by dropping the rows or columns. On contrary, we can also replace the data with another value.
+In Pandas they are two ways to identify the missing data, these two methods are: __isnull() and dropna()__.
  
 ### 23. What is transfer learning ?
 A deep learning model trained on a specific task can be reused for different problem in the same domain even if the amount of data is not that huge.
@@ -144,13 +145,13 @@ We need diverse models for creating an ensemble. Diversity can be achieved by:
 * Using different subsets of the data for training. This is called bagging.
 * Giving a different weight to each of the samples of the training set. If this is done iteratively, weighting the samples according to the errors of the ensemble, it’s called boosting.
 
-### 27. What is regularization? Can you give some examples of regularization techniques?
+### 27. What is regularization? Give some examples of regularization techniques.
 Regularization is any technique that aims to improve the validation score, sometimes at the cost of reducing the training score.
 
 Some regularization techniques:
 * L1 tries to minimize the absolute value of the parameters of the model. It produces sparse parameters.
 * L2 tries to minimize the square value of the parameters of the model. It produces parameters with small values.
-* Dropout is a technique applied to neural networks that randomly sets some of the neurons’ outputs to zero during training. This forces the network to learn better representations of the data by preventing complex interactions between the neurons: Each neuron needs to learn useful features.
+* Dropout is a technique applied to neural networks that randomly sets some of the neurons' output to zero during training. This forces the network to learn better representations of the data by preventing complex interactions between the neurons.
 * Early stopping will stop training when the validation score stops improving, even when the training score may be improving. This prevents overfitting on the training dataset.
 
 The standard way to avoid overfitting is called __L2 regularization__. It consists of appropriately modifying your cost function, from:
@@ -181,7 +182,7 @@ There are different options to deal with imbalanced datasets:
 ### 30. What are some factors that explain the success and recent rise of deep learning?
 The success of deep learning in the past decade can be explained by three main factors:
 
-* __More data__. The availability of massive labeled datasets allows us to train models with more parameters and achieve state-of-the-art scores. Other ML algorithms do not scale as well as deep learning when it comes to dataset size.
+* __More data__. The availability of massive labelled datasets allows us to train models with more parameters and achieve state-of-the-art scores. Other ML algorithms do not scale as good as deep learning when it comes to dataset size.
 * __GPU__. Training models on a GPU can reduce the training time by orders of magnitude compared to training on a CPU. Currently, cutting-edge models are trained on multiple GPUs or even on specialized hardware.
 * __Improvements in algorithms__. ReLU activation, dropout, and complex network architectures have also been very significant factors.
 

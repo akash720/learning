@@ -199,3 +199,34 @@ Computer vision is one of fields where data augmentation is very useful. There a
 Convolutional networks are a class of neural network that use convolutional layers instead of fully connected layers. On a fully connected layer, all the output units have weights connecting to all the input units. On a convolutional layer, we have some weights that are repeated over the input.
 
 The advantage of convolutional layers over fully connected layers is that the number of parameters is far smaller. This results in better generalization of the model. For example, if we want to learn a transformation from a 10x10 image to another 10x10 image, we will need 10,000 parameters if using a fully connected layer. If we use two convolutional layers, the first one having nine filters and the second one having one filter, with a kernel size of 3x3, we will have only 90 parameters.
+
+### 33. Quick notes
+General flow for machine learning/deep learning
+1. Gathering data
+2. Pre-processing data
+3. Training model
+4. Evaluating model
+5. Optimizing model's accuracy
+	- Hyperparameter Tuning (learning rate, epochs)
+	- address Overfitting (get more data, reduce model complexity, regularization)
+	- Data Augmentation (flipping, blurring, zooming)
+	- Dropout (reduces co-dependency of neurons)
+
+#### Activation functions:
+- linear function
+- sigmoid (for binary classification)
+- tanh
+- relu (max(0, x))
+- leaky relu
+
+#### Loss Functions
+- RMS(root mean squared) error for regression
+- Binary cross entropy for binary classification
+- Multi-class cross entropy for multi-class classification
+
+#### Optimizers
+- Gradient descent (GD)
+- Stochastic GD (GD but with partial dataset)
+- Adagrad (adapts learning rate to individual features)
+- rmsprop(keeps gradient in a window)
+- adam
